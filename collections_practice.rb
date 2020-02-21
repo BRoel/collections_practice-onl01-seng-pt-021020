@@ -15,7 +15,7 @@ def swap_elements_from_to(array, index, new_index)
   return array
 end
 
-a_maker(["blake", "ashley", "scott"]) #["bl$ke", "as$ley", "sc$tt"]
+kesha_maker(["blake", "ashley", "scott"]) #["bl$ke", "as$ley", "sc$tt"]
 
 def find_a(array)
   array.find_all do |word|
