@@ -1,18 +1,42 @@
-def swap_elements(array)
-  array[1..2] = array[1..2].sort do |a,b|
-    if a==b || a<b || a>b 
-      1
-    end
+def sort_array(array)
+  array.sort
+end
+
+sort_array([25, 7, 1]) #[1,7,25]
+
+def sort_array_desc(array)
+  array.sort do | left, right|
+    right <=> left
   end
+end
+
+sort_array_desc([25, 7, 14]) #[25, 14, 7]
+
+def sort_array_count(array)
+  array.sort do |left, right|
+    left.length <=> right.length
+  end
+end
+
+sort_array_count(["dogs", "cat", "Horses"]) 
+
+def swap_elements(array)
+  array[1], array[2] = array[2], array[1]
   array
 end
 
-test_array = [1,2,3,4]
-string_test = ["blake", "ashley", "scott"]
+swap_elements(["blake", "ashley", "scott"]) 
 
-def swap_elements_from_to(array, index, new_index)
-  array[index], array[new_index] = array[new_index], array[index]
-  return array
+def reverse_array(array)
+  array.reverse
+end
+
+reverse_array(["blake", "ashley", "scott"]) #["scott", "ashley", "blake"]
+
+def kesha_maker(array)
+  array.each do |item|
+    item[2] = "$"
+  end
 end
 
 kesha_maker(["blake", "ashley", "scott"]) #["bl$ke", "as$ley", "sc$tt"]
@@ -22,7 +46,10 @@ def find_a(array)
     word[0] == "a"
   end
 
- 
+  # using select method
+    # array.select do |word|
+    #   word[0] == "a"
+    # end
 end
 
 find_a(["apple", "orange", "pear", "avis", "arlo", "ascot" ]) #["apple", "avis", "arlo", "ascot"]
@@ -34,7 +61,7 @@ def sum_array(array)
   end
   sum
 end 
- 
+  
 end
 
 sum_array([11,4,7,8,9,100,134]) #273
@@ -49,4 +76,4 @@ def add_s(array)
   end
 end
 
-add_s(["hand","feet", "knee", "table"]) #["hands","feet", "knees", "tables"]
+add_s(["hand","feet", "knee", "table"])
